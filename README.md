@@ -1,0 +1,2 @@
+# discrim
+custom discord discriminator
