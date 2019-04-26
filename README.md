@@ -1,5 +1,5 @@
 # discrim
-custom discord discriminator
+custom discord discriminator (account creator)
 
 `import multiprocessing to continue`
 
