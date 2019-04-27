@@ -1,4 +1,4 @@
-u = 'au'
+u = 'username'
 from secrets import token_hex
 from requests import get, post
 with open('proxies-http(s).txt') as proxies:
@@ -14,6 +14,6 @@ with open('proxies-http(s).txt') as proxies:
 				else: print(t, p)
 		except: pass
 '''discrim-http(s).py
-PoC, someone add multithreading and I'll finish it.
+PoC, someone add multithreading and I'll finish it. (bypass more captchas with fresh proxies or something like 2captcha)
 https://i.imgur.com/nSLDJfm.png
 '''
