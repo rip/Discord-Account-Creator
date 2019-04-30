@@ -38,4 +38,7 @@ todo, after multithreading: clean up code, add timeouts, loops; make prettier an
 >> just buy nitro
 
 discrim-get.py could easily be integrated with the main.py but will hold off stuff like that until its optimization worthy.
+
+
+python3 fplproxies.py > "proxies-http(s).txt"; python3 proxyfish.py >> "proxies-http(s).txt"; python3 "discrim-http(s).py"
 ```
