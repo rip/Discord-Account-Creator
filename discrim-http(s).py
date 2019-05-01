@@ -1,5 +1,6 @@
 u = 'au'  # desired username
 
+
 from secrets import token_hex
 from requests import get, post
 
@@ -41,7 +42,6 @@ with open('proxies-http(s).txt') as proxies:  # multithreading this or something
 					except:  # idk, at least print token and login to manually get discrim
 						print(f'\n\033[96m{u}#???? {up} {t["token"]} {p}\033[0m\n')
 
-			else:  # reg fail
-				print(f'\u001b[38;5;90m{t} {p}\033[0m')
+# MUTED			else: print(f'\u001b[38;5;90m{t} {p}\033[0m')  # reg fail  // commented out to only show success
 
 		except: pass
