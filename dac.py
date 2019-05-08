@@ -104,7 +104,7 @@ def lol():
 					except:  # at least print token and login to later try to get discrim again manually with above req
 						print(f'\033[96m????', l, t["token"], p, '\033[0m')
 
-			else: print(f'\u001b[38;5;90m{t} {p}\033[0m')  # reg fail  // -v commented out to only show success
+# MUTED		else: print(f'\u001b[38;5;90m{t} {p}\033[0m')  # reg fail  // -v commented out to only show success
 
 		except: pass
 
