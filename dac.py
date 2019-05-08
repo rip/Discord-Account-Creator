@@ -97,7 +97,7 @@ def lol():
 							headers={'Authorization': t['token']}
 						).json()['discriminator'], l, t['token'], p, '\033[0m')
 
-					except:  # at least print token and login to manually try to get discrim again with above req
+					except:  # at least print token and login to later try to get discrim again manually with above req
 						print(f'\033[96m????', l, t["token"], p, '\033[0m')
 		except: pass
 
