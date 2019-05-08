@@ -117,16 +117,15 @@ def dac(proxylist, verbose):
 
 	print('\033[45;96maccounts created:', f'{accounts}. time elapsed: {time}. going again~=^.^=💫\033[0m')
 
-
 def main():
 
 	parser = ArgumentParser(description='Discord Account Creator (custom discriminator, raid, spam, etc)')
 
+	parser.add_argument('-x', '--x', help='go through list only once and exit', action='store_true')
+
 	parser.add_argument('-v', '--verbose', help='increase output verbosity', action='store_true')
 
 	parser.add_argument('-p', '--proxies', help='custom proxy list (ip:port' + '\\' + 'n)')
-
-	parser.add_argument('-x', '--x', help='go through list only once then exit', action='store_true')
 
 	args = parser.parse_args()
 
@@ -158,4 +157,6 @@ def main():
 
 			dac(pl, v)
 
-main()
+if __name__ == "__main__":
+
+	main()
