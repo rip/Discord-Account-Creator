@@ -17,7 +17,7 @@ optional arguments:
                         custom proxy list (ip:port\n)
 ```
 
-another example: `python3 proxyfish.py > proxies.txt;`**`python3 dac.py -xp proxies.txt`**
+_another example_: `python3 proxyfish.py > proxies.txt;`**`python3 dac.py -xp proxies.txt`**
 
 (bypass more captchas with fresh proxies or something like 2captcha)
 
