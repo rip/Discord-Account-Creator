@@ -5,12 +5,13 @@ discord account creator (custom discriminator, raid, spam, etc)
 ![](https://i.imgur.com/OpCyQnA.png)
 
 ```
-usage: dac.py [-h] [-v] [-p PROXIES]
+usage: dac.py [-h] [-x] [-v] [-p PROXIES]
 
 Discord Account Creator (custom discriminator, raid, spam, etc)
 
 optional arguments:
   -h, --help            show this help message and exit
+  -x, --x               go through list only once and exit
   -v, --verbose         increase output verbosity
   -p PROXIES, --proxies PROXIES
                         custom proxy list (ip:port\n)
