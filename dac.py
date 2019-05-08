@@ -125,7 +125,7 @@ def main():
 
 	parser.add_argument('-v', '--verbose', help='increase output verbosity', action='store_true')
 
-	parser.add_argument('-t', '--threads', help='number of threads (default: 5')
+	parser.add_argument('-t', '--threads', help='number of threads (default: 5)')
 
 	parser.add_argument('-p', '--proxies', help='custom proxy list (ip:port' + '\\' + 'n)')
 
