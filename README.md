@@ -1,13 +1,13 @@
 # discord account creator
 
-discord account creator (custom discriminator, raid, spam, etc)
+discord account creator (custom discriminator, raid, spam, etc) + proxies
 
 ![](https://i.imgur.com/OpCyQnA.png)
 
 ```
 usage: dac.py [-h] [-x] [-v] [-p PROXIES]
 
-Discord Account Creator (custom discriminator, raid, spam, etc)
+Discord Account Creator (custom discriminator, raid, spam, etc) + proxies
 
 optional arguments:
   -h, --help            show this help message and exit
