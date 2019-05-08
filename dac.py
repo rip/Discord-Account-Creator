@@ -73,7 +73,7 @@ def lol():
 			t = post(f'{d[0:27]}auth/register', 
 					headers={'User-Agent': ua},
 					timeout=10, 
-					roxies=proxies,
+					proxies=proxies,
 					json={
 						'consent': 'true', 
 						'username': ''.join([choice(ascii_letters + digits) for n in range(randint(6,9))]), 
@@ -104,6 +104,8 @@ def lol():
 					except:  # at least print token and login to later try to get discrim again manually with above req
 						print(f'\033[96m????', l, t["token"], p, '\033[0m')
 
+			else: print(f'\u001b[38;5;90m{t} {p}\033[0m')  # reg fail  // -v commented out to only show success
+
 		except: pass
 
 	# timer and print loop stats
@@ -112,7 +114,6 @@ def lol():
 
 	print('\033[45;96maccounts created:', f'{accounts}. time elapsed: {time}. going again~=^.^=💫\033[0m')
 
-# MUTED		else: print(f'\u001b[38;5;90m{t} {p}\033[0m')  # reg fail  // -v commented out to only show success
 
 def main():
 
