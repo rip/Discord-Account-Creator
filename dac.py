@@ -137,6 +137,10 @@ def main():
 
 		t = args.threads
 
+	else: 
+
+		t = 5
+
 	if args.proxies:
 
 		pl = []
