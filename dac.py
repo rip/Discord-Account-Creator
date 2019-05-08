@@ -50,7 +50,7 @@ def fpl():
 
 # discrim-http(s).py 
 
-def dac(proxylist, verbose):
+def dac(proxylist, verbose, threads):  # todo: threads
 
 	from time import time, strftime, gmtime  # imported in def because of UnboundLocalError: local variable 'time' referenced before assignment 
 
@@ -125,11 +125,17 @@ def main():
 
 	parser.add_argument('-v', '--verbose', help='increase output verbosity', action='store_true')
 
+	parser.add_argument('-t', '--threads', help='number of threads (default: 5')
+
 	parser.add_argument('-p', '--proxies', help='custom proxy list (ip:port' + '\\' + 'n)')
 
 	args = parser.parse_args()
 
 	v = args.verbose
+
+	if args.threads:
+
+		t = args.threads
 
 	if args.proxies:
 
@@ -155,7 +161,7 @@ def main():
 
 		while True:
 
-			dac(pl, v)
+			dac(pl, v, t)
 
 if __name__ == "__main__":
 
