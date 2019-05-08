@@ -1,3 +1,4 @@
+from argparse import ArgumentParser
 from string import ascii_letters, digits
 from random import randint, choice
 from requests import get, post
@@ -49,7 +50,7 @@ def fpl():
 
 # discrim-http(s).py 
 
-def lol():
+def dac(proxylist, verbose):
 
 	from time import time, strftime, gmtime  # imported in def because of UnboundLocalError: local variable 'time' referenced before assignment 
 
@@ -62,18 +63,16 @@ def lol():
 
 	start_time = time()
 
-	for p in fpl():
-
-		proxies = {'http': 'http://' + p, 'https': 'http://' + p}
+	for p in proxylist:
 
 		l = f'{"".join([choice(ascii_letters + digits) for n in range(randint(9,12))])}@gmail.com'  # login, email & pass
 
 		try:
 
-			t = post(f'{d[0:27]}auth/register', 
-					headers={'User-Agent': ua},
+			t = post(f'{d[0:27]}auth/register',
 					timeout=10, 
-					proxies=proxies,
+					headers={'User-Agent': ua},
+					proxies={'http': 'http://' + p, 'https': 'http://' + p},
 					json={
 						'consent': 'true', 
 						'username': ''.join([choice(ascii_letters + digits) for n in range(randint(6,9))]), 
@@ -88,9 +87,9 @@ def lol():
 
 				try:  # get discrim #
 					print(f'\033[96m'+get(d,
-						headers={'User-Agent': ua, 'Authorization': t['token']},
 						timeout=20,
-						proxies=proxies
+						headers={'User-Agent': ua, 'Authorization': t['token']},
+						proxies={'http': 'http://' + p, 'https': 'http://' + p}
 					).json()['discriminator'], l, t['token'], p, '\033[0m')
 
 				except: 
@@ -104,23 +103,51 @@ def lol():
 					except:  # at least print token and login to later try to get discrim again manually with above req
 						print(f'\033[96m????', l, t["token"], p, '\033[0m')
 
-# MUTED		else: print(f'\u001b[38;5;90m{t} {p}\033[0m')  # reg fail  // -v commented out to only show success
+			else: 
+
+				if verbose == True:
+
+					print(f'\u001b[38;5;90m{t} {p}\033[0m')  # reg fail  // -v commented out to only show success
 
 		except: pass
 
 	# timer and print loop stats
-		
-	time = strftime("%H:%M:%S", gmtime(time() - start_time))
+
+	time = strftime('%H:%M:%S', gmtime(time() - start_time))
 
 	print('\033[45;96maccounts created:', f'{accounts}. time elapsed: {time}. going again~=^.^=💫\033[0m')
 
 
 def main():
 
+	parser = ArgumentParser(description='Discord Account Creator (custom discriminator, raid, spam, etc)')
+
+	parser.add_argument('-v', '--verbose', help='increase output verbosity', action='store_true')
+
+	parser.add_argument('-p', '--proxies', help='custom proxy list (ip:port' + '\\' + 'n)')
+
+	args = parser.parse_args()
+
+	v = args.verbose
+
+	if args.proxies:
+
+		pl = []
+
+		with open(args.proxies) as proxies:
+
+			for proxy in proxies.readlines():
+
+				pl.append(proxy.rstrip('\n'))
+
+	else:  # if no proxies provided, use free proxy lists.
+
+		pl = fpl()
+
 	print('Generating...💫')
 
 	while True:
 
-		lol()
+		dac(pl, v)
 
 main()
