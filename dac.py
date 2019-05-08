@@ -126,6 +126,8 @@ def main():
 
 	parser.add_argument('-p', '--proxies', help='custom proxy list (ip:port' + '\\' + 'n)')
 
+	parser.add_argument('-x', '--x', help='go through list only once then exit', action='store_true')
+
 	args = parser.parse_args()
 
 	v = args.verbose
@@ -146,8 +148,14 @@ def main():
 
 	print('Generating...💫')
 
-	while True:
+	if args.x:
 
 		dac(pl, v)
+
+	else:  # usually for running through a proxy list only once
+
+		while True:
+
+			dac(pl, v)
 
 main()
