@@ -75,7 +75,7 @@ def dac(proxylist, verbose):
 					proxies={'http': 'http://' + p, 'https': 'http://' + p},
 					json={
 						'consent': 'true', 
-						'username': ''.join([choice(ascii_letters + digits) for n in range(randint(6,9))]), 
+						'username': l.split('@')[0], 
 						'email': l, 
 						'password': l
 						}
