@@ -83,7 +83,7 @@ def dac(proxylist, verbose):
 
 			if 'token' in t:
 
-				accounts + 1
+				accounts = accounts + 1
 
 				try:  # get discrim #
 					print(f'\033[96m'+get(d,
