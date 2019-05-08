@@ -5,7 +5,7 @@ discord account creator (custom discriminator, raid, spam, etc) + proxies
 ![](https://i.imgur.com/OpCyQnA.png)
 
 ```
-usage: dac.py [-h] [-x] [-v] [-p PROXIES]
+usage: dac.py [-h] [-x] [-v] [-t THREADS] [-p PROXIES]
 
 Discord Account Creator (custom discriminator, raid, spam, etc) + proxies
 
@@ -13,6 +13,8 @@ optional arguments:
   -h, --help            show this help message and exit
   -x, --x               go through list only once and exit
   -v, --verbose         increase output verbosity
+  -t THREADS, --threads THREADS
+                        number of threads (default: 5)
   -p PROXIES, --proxies PROXIES
                         custom proxy list (ip:port\n)
 ```
