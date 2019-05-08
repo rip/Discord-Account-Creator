@@ -55,6 +55,9 @@ def lol():
 
 	d = 'https://discordapp.com/api/v6/users/@me'
 
+	ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/' + \
+		'537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36'
+
 	accounts = 0
 
 	start_time = time()
@@ -68,8 +71,9 @@ def lol():
 		try:
 
 			t = post(f'{d[0:27]}auth/register', 
-					proxies=proxies, 
+					headers={'User-Agent': ua},
 					timeout=10, 
+					roxies=proxies,
 					json={
 						'consent': 'true', 
 						'username': ''.join([choice(ascii_letters + digits) for n in range(randint(6,9))]), 
@@ -84,9 +88,9 @@ def lol():
 
 				try:  # get discrim #
 					print(f'\033[96m'+get(d,
-						proxies=proxies,
+						headers={'User-Agent': ua, 'Authorization': t['token']},
 						timeout=20,
-						headers={'Authorization': t['token']}
+						proxies=proxies
 					).json()['discriminator'], l, t['token'], p, '\033[0m')
 
 				except: 
@@ -94,11 +98,12 @@ def lol():
 					try:  # try again without proxy
 						print(f'\033[96m'+get(d,
 							timeout=30,
-							headers={'Authorization': t['token']}
+							headers={'User-Agent': ua, 'Authorization': t['token']}
 						).json()['discriminator'], l, t['token'], p, '\033[0m')
 
 					except:  # at least print token and login to later try to get discrim again manually with above req
 						print(f'\033[96m????', l, t["token"], p, '\033[0m')
+
 		except: pass
 
 	# timer and print loop stats
