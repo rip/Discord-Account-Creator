@@ -125,7 +125,7 @@ def main():
 
 	parser.add_argument('-v', '--verbose', help='increase output verbosity', action='store_true')
 
-	parser.add_argument('-t', '--threads', help='number of threads (default: 5)')
+	parser.add_argument('-t', '--threads', help='number of threads (default: 5)', type=int)
 
 	parser.add_argument('-p', '--proxies', help='custom proxy list (ip:port' + '\\' + 'n)')
 
@@ -159,7 +159,7 @@ def main():
 
 	if args.x:
 
-		dac(pl, v)
+		dac(pl, v, t)
 
 	else:  # usually for running through a proxy list only once
 
