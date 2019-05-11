@@ -119,7 +119,7 @@ def dac(proxylist, verbose, threads):  # todo: threads
 
 def main():
 
-	parser = ArgumentParser(description='Discord Account Creator (custom discriminator, raid, spam, etc) + proxies')
+	parser = ArgumentParser(description='discord account creator // async + proxies')
 
 	parser.add_argument('-x', '--x', help='go through list only once and exit', action='store_true')
 
