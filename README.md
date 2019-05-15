@@ -19,7 +19,10 @@ optional arguments:
                         custom proxy list (ip:port\n)
 ```
 
-_another example_: `python3 proxyfish.py > proxies.txt;`**`python3 dac.py -xp proxies.txt`**
+_another example_: 
+
+`while :; do python3 `[`proxyfish.py`](https://github.com)` > proxies.txt; `**`python3 dac.py -xp proxies.txt`**`; done`
+
 
 (custom discriminator, raid, spam, etc)
 
