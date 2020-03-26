@@ -1,7 +1,5 @@
 # discord account creator
 
-discord account creator // async + proxies
-
 ![](https://i.imgur.com/OpCyQnA.png)
 
 ```
@@ -26,8 +24,7 @@ _another example_:
 
 (custom discriminator, raid, spam, etc)
 
-(bypass more captchas with fresh proxies or something like 2captcha)
+(bypass more captchas with fresh proxies, captcha solver lib or something like 2captcha)
 
-PoC. todo: add async or threading
+PoC. todo: add async / threading
 
-###### this is for educational purposes only. i may have heard of something called discord "nitro" to choose your own custom discriminator and more as discord probably disapproves (especially registering accounts, not even temp ephemerals to claim if id is true)
